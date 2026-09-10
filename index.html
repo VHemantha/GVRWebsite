@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0E1A" />
+
+  <title>GVR Caliber — Engineering Intelligent Automation</title>
+  <meta name="description" content="GVR Caliber is a founder-led IT services company building RPA, hyperautomation, agentic AI, machine learning, and full-stack web and mobile solutions for ambitious teams." />
+  <meta name="keywords" content="RPA automation, hyperautomation, agentic AI, machine learning, data analytics, web development, mobile development, UiPath, Power Automate, Automation Anywhere" />
+  <meta name="author" content="GVR Caliber" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GVR Caliber — Engineering Intelligent Automation" />
+  <meta property="og:description" content="Agentic-first automation and full-stack delivery. RPA, hyperautomation with AI, agentic solutions, ML and data analytics, web and mobile apps." />
+  <meta property="og:site_name" content="GVR Caliber" />
+  <meta property="og:url" content="https://gvrcaliber.com/" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='1200' height='630' fill='%230A0E1A'/%3E%3Ctext x='600' y='330' font-family='Arial' font-size='120' fill='%2300E5FF' text-anchor='middle'%3EGVR CALIBER%3C/text%3E%3C/svg%3E" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GVR Caliber — Engineering Intelligent Automation" />
+  <meta name="twitter:description" content="Agentic-first automation and full-stack delivery for ambitious teams." />
+
+  <!-- Favicon (inline SVG data URI) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300E5FF'/%3E%3Cstop offset='1' stop-color='%237C4DFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230A0E1A'/%3E%3Cpath d='M32 12 L50 22 L50 42 L32 52 L14 42 L14 22 Z' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='url(%23g)'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ SKIP LINK ============ -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- ============ BOOT LOADER ============ -->
+  <div id="loader" class="loader" role="status" aria-live="polite" aria-label="System initializing">
+    <div class="loader__inner">
+      <div class="loader__logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="72" height="72">
+          <defs>
+            <linearGradient id="loaderGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00E5FF" />
+              <stop offset="1" stop-color="#7C4DFF" />
+            </linearGradient>
+          </defs>
+          <path class="loader__hex" d="M32 6 L54 19 L54 45 L32 58 L10 45 L10 19 Z" fill="none" stroke="url(#loaderGrad)" stroke-width="2" />
+          <circle class="loader__core" cx="32" cy="32" r="5" fill="url(#loaderGrad)" />
+        </svg>
+      </div>
+      <pre class="loader__terminal" aria-hidden="true"><span id="bootText"></span><span class="loader__caret">_</span></pre>
+      <div class="loader__bar"><span id="bootBar"></span></div>
+      <button id="skipBoot" class="loader__skip" type="button">Skip intro</button>
+    </div>
+  </div>
+
+  <!-- ============ CURSOR GLOW (desktop) ============ -->
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ============ BACKGROUND LAYERS ============ -->
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ============ HUD / ZONE NAV ============ -->
+  <nav id="hud" class="hud" aria-label="Section navigation">
+    <ul class="hud__list">
+      <li><a href="#hero" data-zone="hero" class="hud__dot is-active"><span class="hud__label">Home</span></a></li>
+      <li><a href="#about" data-zone="about" class="hud__dot"><span class="hud__label">About</span></a></li>
+      <li><a href="#services" data-zone="services" class="hud__dot"><span class="hud__label">Services</span></a></li>
+      <li><a href="#stack" data-zone="stack" class="hud__dot"><span class="hud__label">Stack</span></a></li>
+      <li><a href="#why" data-zone="why" class="hud__dot"><span class="hud__label">Why Us</span></a></li>
+      <li><a href="#process" data-zone="process" class="hud__dot"><span class="hud__label">Process</span></a></li>
+      <li><a href="#contact" data-zone="contact" class="hud__dot"><span class="hud__label">Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <a href="#hero" class="brand" aria-label="GVR Caliber home">
+      <svg class="brand__mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+        <defs>
+          <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#00E5FF" />
+            <stop offset="1" stop-color="#7C4DFF" />
+          </linearGradient>
+        </defs>
+        <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" fill="none" stroke="url(#brandGrad)" stroke-width="3" />
+        <circle cx="32" cy="32" r="5.5" fill="url(#brandGrad)" />
+      </svg>
+      <span class="brand__name">GVR<span class="brand__accent">Caliber</span></span>
+    </a>
+
+    <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#stack">Tech Stack</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="primary-nav__cta">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ ZONE 01 — HERO ============ -->
+    <section id="hero" class="zone zone--hero" aria-labelledby="heroTitle">
+      <canvas id="heroCanvas" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__content">
+        <p class="eyebrow reveal">System online // GVR Caliber</p>
+        <h1 id="heroTitle" class="hero__title reveal">
+          Engineering <span class="grad-text">Intelligent Automation</span>
+        </h1>
+        <p class="hero__lede reveal">
+          We are a founder-led IT services company that designs, builds, and scales
+          automation and AI systems, from robotic process automation to agentic
+          platforms and full-stack products.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#services" class="btn btn--primary" data-ripple>
+            <span>Explore Capabilities</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost" data-ripple>Start a Project</a>
+        </div>
+        <dl class="hero__stats reveal">
+          <div><dt class="counter" data-target="6">0</dt><dd>Core capabilities</dd></div>
+          <div><dt class="counter" data-target="3">0</dt><dd>Founding partners</dd></div>
+          <div><dt class="counter" data-target="100" data-suffix="%">0</dt><dd>Delivery ownership</dd></div>
+        </dl>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to next section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ ZONE 02 — ABOUT ============ -->
+    <section id="about" class="zone zone--about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <p class="eyebrow reveal">02 // Who we are</p>
+        <h2 id="aboutTitle" class="section-title reveal">A startup built by three complementary minds</h2>
+        <div class="about__grid">
+          <div class="about__copy">
+            <p class="reveal">
+              GVR Caliber was founded by three partners who kept meeting the same
+              problem from different angles: teams drowning in manual work, data
+              they could not act on, and software that never quite fit. We started
+              the company to fix that end to end.
+            </p>
+            <p class="reveal">
+              One of us lives in enterprise automation and process design. One of us
+              builds machine learning and agentic AI systems. One of us ships
+              production web and mobile products. Together we cover the full path
+              from a rough idea to a running system your team relies on.
+            </p>
+            <p class="reveal">
+              Our mission is simple: put intelligent automation within reach of
+              teams that were told it was too complex, too expensive, or too far off.
+            </p>
+          </div>
+          <div class="about__nodes reveal" aria-hidden="true">
+            <svg viewBox="0 0 320 320" class="nodes-svg">
+              <defs>
+                <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#00E5FF" />
+                  <stop offset="1" stop-color="#7C4DFF" />
+                </linearGradient>
+              </defs>
+              <line x1="160" y1="70" x2="70" y2="240" stroke="url(#nodeGrad)" stroke-width="1.5" opacity="0.5" />
+              <line x1="160" y1="70" x2="250" y2="240" stroke="url(#nodeGrad)" stroke-width="1.5" opacity="0.5" />
+              <line x1="70" y1="240" x2="250" y2="240" stroke="url(#nodeGrad)" stroke-width="1.5" opacity="0.5" />
+              <circle class="node-pulse" cx="160" cy="70" r="16" fill="url(#nodeGrad)" />
+              <circle class="node-pulse" cx="70" cy="240" r="16" fill="url(#nodeGrad)" style="animation-delay:.6s" />
+              <circle class="node-pulse" cx="250" cy="240" r="16" fill="url(#nodeGrad)" style="animation-delay:1.2s" />
+            </svg>
+            <ul class="about__pillars">
+              <li><strong>Automation</strong><span>Process design and RPA</span></li>
+              <li><strong>Intelligence</strong><span>ML and agentic AI</span></li>
+              <li><strong>Product</strong><span>Web and mobile delivery</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ZONE 03 — SERVICES ============ -->
+    <section id="services" class="zone zone--services" aria-labelledby="servicesTitle">
+      <div class="container">
+        <p class="eyebrow reveal">03 // Capabilities</p>
+        <h2 id="servicesTitle" class="section-title reveal">Six modules. One delivery team.</h2>
+        <p class="section-lede reveal">Select a module to unlock the detail.</p>
+
+        <div class="services__grid" id="servicesGrid">
+          <!-- cards injected + progressively enhanced; static fallback content below -->
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-1">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="17" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <span class="svc-card__title">RPA Automation</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Rule-based work, handled by software robots that never tire.</p>
+            <div class="svc-card__detail" id="svc-1" hidden>
+              <p>We map high-volume, repetitive processes and rebuild them as reliable
+              bots in UiPath, Power Automate, or Automation Anywhere. You get audit
+              trails, exception handling, and dashboards, not a black box.</p>
+              <ul>
+                <li>Process discovery and ROI modelling</li>
+                <li>Attended and unattended bot development</li>
+                <li>Orchestration, monitoring, and support</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-2">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <span class="svc-card__title">Hyperautomation with AI</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Automation that reads, decides, and adapts, not just clicks.</p>
+            <div class="svc-card__detail" id="svc-2" hidden>
+              <p>We combine RPA with document AI, natural language understanding, and
+              decision models so processes handle unstructured inputs and edge cases
+              on their own. Fewer handoffs, fewer queues.</p>
+              <ul>
+                <li>Intelligent document processing</li>
+                <li>Process mining and orchestration</li>
+                <li>Human-in-the-loop review workflows</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-3">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M12 10v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <span class="svc-card__title">Agentic AI Solutions</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Goal-driven AI agents that plan, use tools, and get work done.</p>
+            <div class="svc-card__detail" id="svc-3" hidden>
+              <p>We design multi-step agents that reason over your systems, call APIs
+              and tools, and complete tasks with guardrails and observability. Built
+              for real workflows, not demos.</p>
+              <ul>
+                <li>Agent architecture and tool integration</li>
+                <li>Retrieval, memory, and evaluation pipelines</li>
+                <li>Safety rails, logging, and cost controls</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-4">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="svc-card__title">Machine Learning &amp; Data Analytics</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Turn raw data into forecasts, segments, and decisions.</p>
+            <div class="svc-card__detail" id="svc-4" hidden>
+              <p>From data pipelines to deployed models, we build the analytics layer
+              your team acts on: demand forecasting, churn and risk scoring, anomaly
+              detection, and clear dashboards.</p>
+              <ul>
+                <li>Data engineering and feature pipelines</li>
+                <li>Predictive and classical ML models</li>
+                <li>Dashboards and decision tooling</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-5">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <span class="svc-card__title">Web Application Development</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Fast, modern web apps built on React and a solid backend.</p>
+            <div class="svc-card__detail" id="svc-5" hidden>
+              <p>We ship production web applications: internal tools, customer
+              portals, dashboards, and SaaS products, with clean architecture,
+              testing, and CI so they stay maintainable.</p>
+              <ul>
+                <li>React front ends and design systems</li>
+                <li>APIs, auth, and cloud deployment</li>
+                <li>Performance, accessibility, and monitoring</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="svc-card tilt reveal" data-svc>
+            <button class="svc-card__head" aria-expanded="false" aria-controls="svc-6">
+              <span class="svc-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><rect x="7" y="3" width="10" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <span class="svc-card__title">Mobile Application Development</span>
+              <span class="svc-card__toggle" aria-hidden="true">+</span>
+            </button>
+            <p class="svc-card__summary">Cross-platform mobile apps with React Native and Expo.</p>
+            <div class="svc-card__detail" id="svc-6" hidden>
+              <p>One codebase, both platforms. We build and ship iOS and Android apps
+              with React Native and Expo, including offline support, push, and
+              over-the-air updates.</p>
+              <ul>
+                <li>React Native and Expo development</li>
+                <li>App Store and Play Store release</li>
+                <li>Analytics, crash reporting, and OTA updates</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ZONE 04 — TECH STACK ============ -->
+    <section id="stack" class="zone zone--stack" aria-labelledby="stackTitle">
+      <div class="container">
+        <p class="eyebrow reveal">04 // The arsenal</p>
+        <h2 id="stackTitle" class="section-title reveal">Tools we reach for</h2>
+        <p class="section-lede reveal">Hover or tap a tool to see how we use it.</p>
+
+        <div class="stack__group reveal">
+          <h3 class="stack__cat">Automation</h3>
+          <ul class="stack__items">
+            <li class="chip" data-use="Enterprise-grade RPA for complex, attended and unattended workflows."><span>UiPath</span></li>
+            <li class="chip" data-use="Native automation across the Microsoft ecosystem and cloud connectors."><span>Power Automate</span></li>
+            <li class="chip" data-use="Scalable bot orchestration for high-volume back-office processes."><span>Automation Anywhere</span></li>
+          </ul>
+        </div>
+
+        <div class="stack__group reveal">
+          <h3 class="stack__cat">AI</h3>
+          <ul class="stack__items">
+            <li class="chip" data-use="Autonomous agents that plan, call tools, and complete multi-step tasks."><span>AI Agents</span></li>
+            <li class="chip" data-use="Proven classical models for forecasting, scoring, and segmentation."><span>Classical AI / ML</span></li>
+            <li class="chip" data-use="The core language for our data, ML, and automation engineering."><span>Python</span></li>
+          </ul>
+        </div>
+
+        <div class="stack__group reveal">
+          <h3 class="stack__cat">Development</h3>
+          <ul class="stack__items">
+            <li class="chip" data-use="Component-driven web front ends and internal tools."><span>React</span></li>
+            <li class="chip" data-use="Cross-platform iOS and Android apps from a single codebase."><span>React Native</span></li>
+            <li class="chip" data-use="Fast mobile build tooling, OTA updates, and managed releases."><span>Expo</span></li>
+          </ul>
+        </div>
+
+        <p class="stack__hint" id="stackHint" aria-live="polite">Pick a tool above.</p>
+      </div>
+    </section>
+
+    <!-- ============ ZONE 05 — WHY US ============ -->
+    <section id="why" class="zone zone--why" aria-labelledby="whyTitle">
+      <div class="container">
+        <p class="eyebrow reveal">05 // Why GVR Caliber</p>
+        <h2 id="whyTitle" class="section-title reveal">What makes us different</h2>
+        <div class="why__grid">
+          <article class="why__tile reveal">
+            <span class="why__num counter" data-target="1" data-prefix="0">0</span>
+            <h3>Agentic-first thinking</h3>
+            <p>We design for autonomous, goal-driven systems from day one, not as a bolt-on to legacy scripts.</p>
+          </article>
+          <article class="why__tile reveal">
+            <span class="why__num counter" data-target="2" data-prefix="0">0</span>
+            <h3>Enterprise-grade automation</h3>
+            <p>Audit trails, exception handling, and monitoring are built in, so automation you can actually trust in production.</p>
+          </article>
+          <article class="why__tile reveal">
+            <span class="why__num counter" data-target="3" data-prefix="0">0</span>
+            <h3>Full-stack delivery</h3>
+            <p>Data, models, automation, and the web or mobile product on top, delivered by one accountable team.</p>
+          </article>
+          <article class="why__tile reveal">
+            <span class="why__num counter" data-target="4" data-prefix="0">0</span>
+            <h3>Founder-led engagements</h3>
+            <p>A partner is on every project. You get senior attention, direct communication, and fast decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ZONE 06 — PROCESS ============ -->
+    <section id="process" class="zone zone--process" aria-labelledby="processTitle">
+      <div class="container">
+        <p class="eyebrow reveal">06 // How we work</p>
+        <h2 id="processTitle" class="section-title reveal">From discovery to scale</h2>
+        <ol class="timeline">
+          <li class="timeline__step reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <h3>Discover</h3>
+            <p>We map your processes, data, and goals, and agree on where automation pays off first.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <h3>Design</h3>
+            <p>We shape the target workflow, architecture, and success metrics before writing code.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <h3>Build</h3>
+            <p>We develop in short iterations, with working demos and your feedback at every step.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <h3>Automate</h3>
+            <p>We deploy with monitoring, exception handling, and handover docs your team can own.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <h3>Scale</h3>
+            <p>We extend to new processes and teams, tune models, and keep raising the automation ceiling.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ZONE 07 — CONTACT ============ -->
+    <section id="contact" class="zone zone--contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <p class="eyebrow reveal">07 // Get started</p>
+        <h2 id="contactTitle" class="section-title reveal">Tell us what you want to automate</h2>
+        <div class="contact__grid">
+          <form id="contactForm" class="contact__form reveal" novalidate>
+            <div class="field">
+              <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder=" " />
+              <label for="cf-name">Name</label>
+              <span class="field__error" data-for="cf-name"></span>
+            </div>
+            <div class="field">
+              <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder=" " />
+              <label for="cf-email">Email</label>
+              <span class="field__error" data-for="cf-email"></span>
+            </div>
+            <div class="field">
+              <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder=" " />
+              <label for="cf-company">Company <span class="field__opt">(optional)</span></label>
+            </div>
+            <div class="field">
+              <textarea id="cf-message" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="cf-message">What are you trying to build or automate?</label>
+              <span class="field__error" data-for="cf-message"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--launch" data-ripple>
+              <span>Launch Enquiry</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact__details reveal">
+            <h3>Direct lines</h3>
+            <ul>
+              <li>
+                <span class="contact__k">Email</span>
+                <a href="mailto:hello@gvrcaliber.com">hello@gvrcaliber.com</a>
+              </li>
+              <li>
+                <span class="contact__k">Enquiries</span>
+                <a href="mailto:projects@gvrcaliber.com">projects@gvrcaliber.com</a>
+              </li>
+              <li>
+                <span class="contact__k">Hours</span>
+                <span>Mon to Fri, 9:00 to 18:00 IST</span>
+              </li>
+            </ul>
+            <h3>Elsewhere</h3>
+            <div class="contact__social">
+              <a href="#" aria-label="GVR Caliber on LinkedIn">LinkedIn</a>
+              <a href="#" aria-label="GVR Caliber on GitHub">GitHub</a>
+              <a href="#" aria-label="GVR Caliber on X">X</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <canvas id="footerCanvas" class="footer__canvas" aria-hidden="true"></canvas>
+    <div class="container footer__inner">
+      <a href="#hero" class="brand brand--footer">
+        <svg class="brand__mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true">
+          <path d="M32 8 L52 20 L52 44 L32 56 L12 44 L12 20 Z" fill="none" stroke="url(#brandGrad)" stroke-width="3" />
+          <circle cx="32" cy="32" r="5.5" fill="url(#brandGrad)" />
+        </svg>
+        <span class="brand__name">GVR<span class="brand__accent">Caliber</span></span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__copy">&copy; <span id="year">2026</span> GVR Caliber. Engineering intelligent automation.</p>
+    </div>
+  </footer>
+
+  <!-- Three.js via CDN, deferred; script.js degrades gracefully if it fails -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
